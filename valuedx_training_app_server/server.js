@@ -62,18 +62,6 @@ app.get("/templates/student-registration-template.xlsx", (req, res) => {
   res.download(filePath, "Student_Registration_Template.xlsx");
 });
 
-// Serve React static files
-app.use(express.static(path.join(__dirname, 'build')));
-
-// Handle any unmatched routes and serve index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.js'));
-});
-
-app.get("/", (req, res) => {
-  res.send("API is running successfully.");
-});
-
 async function getEmailCredentials(userId, role) {
   let query;
   let values = [userId];
