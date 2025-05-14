@@ -4631,7 +4631,7 @@ const fetch = require('node-fetch');
 // Runs every day at 9am
 cron.schedule('0 9 * * *', async () => {
   try {
-    await fetch('https://vv-portal.onrender.com/api/generate-absentee-notifications', { method: 'POST' });
+    await fetch('https://vv-portal-1.onrender.com/api/generate-absentee-notifications', { method: 'POST' });
     console.log('Absentee notifications generated');
   } catch (err) {
     console.error('Cron error:', err);
