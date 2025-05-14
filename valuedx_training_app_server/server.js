@@ -14,10 +14,23 @@ const nodemailer = require("nodemailer");
 const app = express();
 const port = process.env.PORT || 3001;
 
+// Allow both local and deployed frontend
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://vv-portal-1.onrender.com'
+];
+
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
+
 app.use(express.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
