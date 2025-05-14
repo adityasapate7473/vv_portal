@@ -1,0 +1,19 @@
+.grades-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    border-radius: 5px;
+    background-color: rgb(255, 254, 254);
+  }
+  
+  .grade-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  
+  .grade-fields .form-group {
+    margin-bottom: 0;
+  }
+  

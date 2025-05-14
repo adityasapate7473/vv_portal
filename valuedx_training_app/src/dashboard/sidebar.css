@@ -1,0 +1,107 @@
+/* Sidebar Wrapper */
+#wrapper {
+  margin-top: 50px;
+  transition: all 0.5s ease;
+  
+}
+#wrapper.toggled {
+  padding-left: 250px;
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  overflow-y: auto;
+  background: #34495e;
+  padding-top: 10px;
+  transition: all 0.5s ease;
+}
+
+/* Text color for toggled sidebar */
+#wrapper.toggled #sidebar-wrapper,
+#wrapper.toggled #sidebar-wrapper a {
+  color: rgb(15, 15, 15);
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar ul li {
+  display: block;
+}
+
+
+.sidebar ul li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: rgb(211, 204, 204); /* Set text color to white */
+}
+
+.sidebar ul li a [class*="icon"] {
+  margin-right: 15px;
+}
+
+.sidebar ul li a#main-toggle:after,
+.sidebar ul li a.dropdown-toggle:after {
+  right: 20px;
+  bottom: 5px;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* Active Link */
+.sidebar ul li:hover {
+  background-color: #747f89;
+  border-radius: 10px;
+}
+
+/* Toggle Button */
+.sidebar-toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Icon */
+.sidebar-toggle-btn .fa-bars {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+/* Rotated Icon for Toggled Sidebar */
+#wrapper.toggled #sidebar-wrapper {
+  left: -250px;
+  margin-left: 250px;
+}
+
+#wrapper.toggled #sidebar-wrapper .fa-bars {
+  transform: rotate(360deg);
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+  #sidebar-wrapper {
+    width: 200px; /* Adjust sidebar width for smaller screens */
+  }
+
+  .sidebar-toggle-btn {
+    top: 5px;
+  }
+}

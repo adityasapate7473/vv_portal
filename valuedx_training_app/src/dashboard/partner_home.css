@@ -1,0 +1,18 @@
+.dashboard-title {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .filters {
+    margin-bottom: 20px;
+  }
+  
+  .filters .dropdown-toggle {
+    width: 100%;
+    text-align: left;
+  }
+  
+  .profile-button {
+    width: 110px;
+  }
+  

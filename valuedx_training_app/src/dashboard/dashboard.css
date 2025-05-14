@@ -1,0 +1,47 @@
+.progress-circle {
+    width: 120px; /* Adjust size as needed */
+    height: 120px; /* Adjust size as needed */
+    background-color: #37b70c; /* Background color of the circle */
+    border-radius: 50%; /* Make it a circle */
+    position: relative;
+  }
+  
+  .bg-image{
+    background-image: url('../images/loginpage.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    height: 100vh;
+}
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    color: #333; /* Text color */
+  }
+  
+  .progress-circle::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(
+      #4CAF50 0% calc((60 / 100) * 360deg), /* Green color up to 60% */
+     
+    );
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .progress-circle{
+    margin-left: 30px;
+  }
+
+  .btn-link:hover {
+    color: #ff5900; /* Change to the desired color on hover */
+  }
+  

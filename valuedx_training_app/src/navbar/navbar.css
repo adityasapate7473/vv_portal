@@ -1,0 +1,9 @@
+.custom-select {
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+  
+    border-radius: 4px;
+    font-size: 16px;
+    background-color:#007FFF;
+  }
