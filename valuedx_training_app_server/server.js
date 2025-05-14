@@ -10,12 +10,10 @@ const crypto = require("crypto");
 const xlsx = require("xlsx");
 const fs = require("fs");
 const nodemailer = require("nodemailer");
-const bcrypt = require('bcrypt');
-const config = require("./config.js");
 
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 app.use(cors({
   origin: "http://localhost:3000",
@@ -65,6 +63,12 @@ app.get("/templates/student-registration-template.xlsx", (req, res) => {
   res.download(filePath, "Student_Registration_Template.xlsx");
 });
 
+// Serve React build
+app.use(express.static(path.join(__dirname, "client", "build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.js"));
+});
 
 async function getEmailCredentials(userId, role) {
   let query;
