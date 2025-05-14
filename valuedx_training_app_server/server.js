@@ -25,11 +25,8 @@ app.use(cookieParser());
 app.use('/profilePic', express.static(path.join(__dirname, 'profilePic')));
 
 const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "Valuedx_Training_App",
-  password: "root",
-  port: 5432,
+  connectionString: "postgresql://vvdatabase_user:lBV3romtJpFQOnPdzzmRt97g5AtkjEtp@dpg-d0i20vbuibrs739sc8qg-a.oregon-postgres.render.com/vvdatabase",
+  ssl: { rejectUnauthorized: false } 
 });
 
 const storage = multer.diskStorage({
