@@ -50,7 +50,7 @@ const EmailSenderPage = () => {
     const [attachment, setAttachment] = useState(null);
 
 
-    const websiteLink = "https://vvms.vishvavidya.com/";
+    const websiteLink = "https://vv-portal-1.onrender.com";
 
     const getCookie = (name) => {
         const match = document.cookie.match(
