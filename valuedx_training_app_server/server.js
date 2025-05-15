@@ -29,6 +29,14 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false } 
 });
 
+// Serve static files from the frontend build
+app.use(express.static(path.join(__dirname, 'client/build'))); // adjust path if needed
+
+// For any other route not starting with /api, serve index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "profilePic/");
